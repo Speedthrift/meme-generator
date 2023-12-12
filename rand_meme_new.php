@@ -109,7 +109,7 @@ a:hover {
             .bg 
             {
                 /* The image used */
-                background-image: url("bg1.jpg");
+                background-image: url("..\\Images\\other\\bg1.jpg");
 
                 /* Full height */
                 height: 100%;
@@ -143,7 +143,7 @@ a:hover {
     // }
     function path($a,$b)
     {
-        $str1="http://localhost/test1/";    
+        $str1="http://localhost/test1/Images/memes/";    
         $str2=mt_rand($a,$b);
         $str3=".jpg";
 
@@ -160,7 +160,7 @@ a:hover {
     <!-- <div class="button button1">    -->
         <!-- <div class="div2"> -->
     
-        <a href="webpage_home.html">
+        <a href="../webpage_home.html">
                 <button class="button2">&larr;Main Menu</button>
             </a>
     <center>
