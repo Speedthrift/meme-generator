@@ -60,6 +60,9 @@
         background-color: white; 
         color: black; 
         border: 2px solid #04AA6D;
+        font-size: 25px;
+        border-radius: 15px;
+        padding: 15px 15px;
         }
 
         .button1:hover {
@@ -90,6 +93,37 @@ a:hover {
         } */
 
 
+        .button2 
+            {
+                background-color: white; 
+                color: black; 
+                border: 2px solid #008CBA;
+                border-radius: 10px;
+            }
+
+            .button2:hover 
+            {
+                background-color: #008CBA;
+                color: white;
+            }
+            .bg 
+            {
+                /* The image used */
+                background-image: url("bg1.jpg");
+
+                /* Full height */
+                height: 100%;
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            body, html 
+            {
+                height: 100%;    /* for image */
+                margin: 0;
+            }
     </style>
 </head>
 <body>
@@ -121,9 +155,14 @@ a:hover {
     //   path(0,10);
 
     ?>
+    <div class="bg">
     <!-- <div class="div1"> -->
     <!-- <div class="button button1">    -->
         <!-- <div class="div2"> -->
+    
+        <a href=webpage_home.html>
+                <button class="button2">&larr;Main Menu</button>
+            </a>
     <center>
             <button class="button1" onClick="window.location.reload();">Generate Meme</button>
             <!-- </div>     -->
@@ -132,5 +171,6 @@ a:hover {
         </center>
 <!-- </div> -->
 <!-- </div> -->
+</div>
 </body>
 </html>
