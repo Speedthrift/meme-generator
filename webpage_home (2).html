@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta tags go here-->
+        <title>
+            Memes
+        </title>
+        <style>
+          a:link
+            { /*for unvisited links*/
+              background-color: #0088ff70;    
+              color: white;        /* text color */
+              padding: 15px 25px;    /* text padding */
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;    
+            } 
+            
+            a:visited 
+            { /*visited links*/
+              background-color: #10345358;
+              color: white;
+              padding: 15px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+            }
+        
+            a:hover, a:active 
+            {
+              background-color: rgb(3, 255, 99);
+              padding: 15px 25px;
+              width: 50px
+            }
+        
+            .center
+            {
+                margin: auto;
+                width: 20%;    /* how much page width is occupied */
+                padding: 10px;
+            }
+        
+            .bg 
+            {
+                /* The image used */
+                background-image: url("pepe_bg.png");
+    
+                /* Full height */
+                height: 100%;
+    
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            body, html 
+            {
+                height: 100%;    /* for image */
+                margin: 0;
+            }
+
+            .cls1
+            {    /*for black box around heading */
+                background-color:rgba(0, 0, 0, 0.364);
+                padding: 2px;
+            }
+</style>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="center">
+                <div class="cls1">
+                   
+                    <h2 align="center" style="color: white;">Welcome to our site!</h2>
+                    
+                </div> <!-- end of div cls1 -->
+            </div> <!-- end of div center -->
+            <center>
+                <a href="http://localhost/test1/rand_meme.php">Random Memes</a><br/><br/>
+                <a href="temp_fin.html">Template Finder</a><br/><br/>
+                <a href="gif_fin.html">GIF Finder</a><br/><br/>
+                <a href="rand_stk.html">Random Stickers</a>
+            </center>
+    </div> <!-- end of div bg -->
+    </body>
+</html>
