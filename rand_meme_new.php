@@ -9,10 +9,11 @@
 
     <style>
         /* Set display to none for image*/
-        #image {
-            display: none;
-            border-radius: 15px;
-        }
+        #image 
+            {        /* for image */
+                display: none;  /* for initially setting as hidden */
+                border-radius: 15px;    /* roundedd corners */
+            }
         .center
             {
                 margin: auto;
@@ -24,82 +25,86 @@
                 
             }
 
-            .div2
+        .div2
             {
                 align-items: center;
             }
 
-                    .image
+        .image
             {
-                display: block;
-                margin-left: auto;
-                margin-top: auto;   
+                display: block;     /* sets image display */
+                margin-left: auto;  /* aligns left */
+                margin-top: auto;   /* aligns from top */
             }
 
-                    .div1 {
+        .div1 
+            {
                 width: 100px;
                 height: 100px;
                 /* background-color: red; */
-                
-                position: absolute;
+                position: absolute; 
                 top:0;
                 bottom: 0;
                 left: 0;
                 right: 0;
-                
                 margin: auto;
             }
 
 
-                    .button {
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        /* margin: 4px 2px; */
-        transition-duration: 0.4s;
-        cursor: pointer;
-        }
+        .button 
+            {
+                border: none;
+                color: white;
+                padding: 16px 32px;     /* distance of text from button edges */
+                text-align: center;
+                text-decoration: none;  /* to remove hyperlink mods */
+                display: inline-block;  
+                font-size: 16px;
+                /* margin: 4px 2px; */
+                transition-duration: 0.4s;  /* for hover transition duration */
+                cursor: pointer;    
+            }
 
-        .button1 {
-        background-color: white; 
-        color: black; 
-        border: 2px solid #04AA6D;
-        font-size: 25px;
-        border-radius: 15px;
-        padding: 15px 15px;
-        }
+        .button1 /* default for button */
+            {
+                background-color: white; 
+                color: black; 
+                border: 2px solid #04AA6D;
+                font-size: 25px;
+                border-radius: 15px;    /* smoothing of corners of button */
+                padding: 15px 15px;
+            }
 
-        .button1:hover {
-        background-color: #04AA6D;
-        color: white;
-        }
+        .button1:hover  /* when user hovers over button */
+            {
+                background-color: #04AA6D;
+                color: white;
+            }
 
-        a:link {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
-}
+        a:link 
+            {
+                color: green;
+                background-color: transparent;
+                text-decoration: none;
+            }
 
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-}
-        /* .button2 {
-        background-color: white; 
-        color: black; 
-        border: 2px solid #008CBA;
-        }
+        a:hover 
+            {
+                color: red;
+                background-color: transparent;
+                text-decoration: underline;
+            }
 
-        .button2:hover {
-        background-color: #008CBA;
-        color: white;
-        } */
+                /* .button2 {
+                background-color: white; 
+                color: black; 
+                border: 2px solid #008CBA;
+                }
 
+                .button2:hover {
+                background-color: #008CBA;
+                color: white;
+                } */
 
         .button2 
             {
@@ -109,12 +114,13 @@ a:hover {
                 border-radius: 10px;
             }
 
-            .button2:hover 
+        .button2:hover 
             {
                 background-color: #008CBA;
                 color: white;
             }
-            .bg 
+
+        .bg 
             {
                 /* The image used */
                 background-image: url("..\\Images\\other\\bg1.jpg");
@@ -127,7 +133,8 @@ a:hover {
                 background-repeat: no-repeat;
                 background-size: cover;
             }
-            body, html 
+
+        body, html 
             {
                 height: 100%;    /* for image */
                 margin: 0;
@@ -136,25 +143,27 @@ a:hover {
 </head>
  
 <body>
-    <div class="bg">
     <!-- <div>
         <h1>GeeksforGeeks</h1>
         <h3>Click on the button to see image</h3> -->
         <!-- Add id to image -->
 
     <!-- </div> -->
-    <a href="../webpage_home.html">
-                <button class="button2">&larr;Main Menu</button>
-            </a>
-    <center>
-    <button class="button1" onclick="rpath()" id="btnID">
-        Generate meme
-    </button>
-    
-    
-    <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto;"/>
 
-    </center>
+    <div class="bg">
+        <a href="../webpage_home.html">     <!-- Link to home webpage -->
+                    <button class="button2">&larr;Main Menu</button>    <!-- Button for going back to main menu -->
+        </a>
+        <center>
+
+            <button class="button1" onclick="rpath()" id="btnID">Generate meme</button> <!-- Button for generating random memes -->
+            
+            <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto;"/> <!-- Image which will get changedto random image 
+                                                                                                        every time button is pressed -->
+
+        </center>
+
+
 <!-- 
     <p id="demo">hi</p> -->
  <!-- <p>
@@ -169,8 +178,11 @@ a:hover {
     </button> -->
     
     
-    
+    <!--
+        Javascript Code
+    -->
     <script>
+        //unused
         // function show() {
         //     /* Access image by id and change 
         //     the display property to block*/
@@ -186,18 +198,19 @@ a:hover {
 
         function rpath()
         {
-            let x = Math.floor((Math.random() * 10) + 1);
-            let str1 = "http://localhost/test1/Images/memes/";
-            let str3 = ".jpg";
-            let res = str1.concat(x);
-            let resf = res.concat(str3);
+            let ul=10                           //upper bound (number of memes)
+            let x = Math.floor((Math.random() * ul) + 1);   //picks a random number between 1 and upper limit
+            let str1 = "http://localhost/test1/Images/memes/";  //first part of image path
+            let str3 = ".jpg";                                  //last part of image path
+            let res = str1.concat(x);   
+            let resf = res.concat(str3);                        //generates path to a random image
             // document.getElementById('demo').innerHTML+='<img id="image" src="'+ resf + '" alt="GFG image" />';
-            document.getElementById('image').src=resf;
-            document.getElementById('image').style.display="block";
+            document.getElementById('image').src=resf;          //sets the path of image as the randomly generated string above
+            document.getElementById('image').style.display="block";     //makes the image visible
             // return resf;
         }
     </script>
-    <div>
+    <div>   
 </body>
  
 </html>
