@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+ 
 <head>
-    <meta charset="UTF-8">
+    
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Memes</title>
+
     <style>
-                    .center
+        /* Set display to none for image*/
+        #image {
+            display: none;
+            border-radius: 15px;
+        }
+        .center
             {
                 margin: auto;
                 width: 25%;    /* how much page width is occupied */
@@ -126,51 +134,70 @@ a:hover {
             }
     </style>
 </head>
+ 
 <body>
-    <?php
-    //def functions
-    // function rand($x,$y)
-    // {
-    //     //echo "hello world<br>";
-    //     // random number between $upper and $lower, inclusive
-    //     // $lower=0;        //lower bound 
-    //     // $upper=100;      //upper bound
-    //     $r_num = mt_rand($x, $y);
-    //     //echo "here is a random number between ".$lower." and ".$upper."<br>";
-    //     //echo "here is a random number between $lower and $upper <br> $r_num";
-    //     //echo $r_num;
-    //     return $r_num;
-    // }
-    function path($a,$b)
-    {
-        $str1="http://localhost/test1/Images/memes/";    
-        $str2=mt_rand($a,$b);
-        $str3=".jpg";
-
-        $str1.=$str2;
-        $str1.=$str3;
-
-        return $str1;
-    }
-    //   path(0,10);
-
-    ?>
     <div class="bg">
-    <!-- <div class="div1"> -->
-    <!-- <div class="button button1">    -->
-        <!-- <div class="div2"> -->
-    
-        <a href="../webpage_home.html">
+    <!-- <div>
+        <h1>GeeksforGeeks</h1>
+        <h3>Click on the button to see image</h3> -->
+        <!-- Add id to image -->
+
+    <!-- </div> -->
+    <a href="../webpage_home.html">
                 <button class="button2">&larr;Main Menu</button>
             </a>
     <center>
-            <button class="button1" onClick="window.location.reload();">Generate Meme</button>
-            <!-- </div>     -->
-        <br/><br/>
-    <img src="<?php echo path(1,10); ?>" alt="image goes brrr" style=" width: 30%;  height: auto;">
-        </center>
-<!-- </div> -->
-<!-- </div> -->
-</div>
+    <button class="button1" onclick="rpath()" id="btnID">
+        Generate meme
+    </button>
+    
+    
+    <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto;"/>
+
+    </center>
+<!-- 
+    <p id="demo">hi</p> -->
+ <!-- <p>
+    hello world
+ </p>
+
+ <h2>
+    yoo how u doing
+ </h2> -->
+ <!-- <button type="button" onclick="show2()" id="btnID2">
+        new image sfd
+    </button> -->
+    
+    
+    
+    <script>
+        // function show() {
+        //     /* Access image by id and change 
+        //     the display property to block*/
+        //     document.getElementById('image')
+        //         .style.display = "block";
+        //     document.getElementById('btnID')
+        //         .style.display = "none";
+        // }
+        // function show2()
+        // {
+        //     document.getElementById('image');
+        // }
+
+        function rpath()
+        {
+            let x = Math.floor((Math.random() * 10) + 1);
+            let str1 = "http://localhost/test1/Images/memes/";
+            let str3 = ".jpg";
+            let res = str1.concat(x);
+            let resf = res.concat(str3);
+            // document.getElementById('demo').innerHTML+='<img id="image" src="'+ resf + '" alt="GFG image" />';
+            document.getElementById('image').src=resf;
+            document.getElementById('image').style.display="block";
+            // return resf;
+        }
+    </script>
+    <div>
 </body>
+ 
 </html>
