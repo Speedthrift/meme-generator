@@ -196,6 +196,7 @@
         //     document.getElementById('image');
         // }
 
+        let fst=0;  //kinda like flag, tells if program is executing first time or subsequent times
         function rpath()
         {
             let ul=10                           //upper bound (number of memes)
@@ -207,7 +208,12 @@
             // document.getElementById('demo').innerHTML+='<img id="image" src="'+ resf + '" alt="GFG image" />';
             document.getElementById('image').src=resf;          //sets the path of image as the randomly generated string above
             document.getElementById('image').style.display="block";     //makes the image visible
-            // return resf;
+            // return resf;if(fst===0)     
+            if (fst===0)//if first time execution, image has to be unhidden, other times only above code has to be executed, 
+            {           //below code becomes pointless and only takes up time
+            document.getElementById('image').style.display="block";
+            fst=1
+            } 
         }
     </script>
     <div>   
