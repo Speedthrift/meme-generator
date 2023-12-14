@@ -196,18 +196,25 @@
         //     document.getElementById('image');
         // }
 
+        let fst=0;      //kinda like flag, tells if program is executing first time or subsequent times
         function rpath()
         {
-            let ul=10                           //upper bound (number of memes)
+            let ul=10;                           //upper bound (number of memes)
             let x = Math.floor((Math.random() * ul) + 1);   //picks a random number between 1 and upper limit
-            let str1 = "http://localhost/test1/Images/sticker/";  //first part of image path
+            let str1 = "http://localhost/test1/Images/memes/";  //first part of image path
             let str3 = ".jpg";                                  //last part of image path
             let res = str1.concat(x);   
             let resf = res.concat(str3);                        //generates path to a random image
             // document.getElementById('demo').innerHTML+='<img id="image" src="'+ resf + '" alt="GFG image" />';
             document.getElementById('image').src=resf;          //sets the path of image as the randomly generated string above
-            document.getElementById('image').style.display="block";     //makes the image visible
-            // return resf;
+            // if (document.getElementById('image').style.display==="none")
+            // {
+            if(fst===0)     //if first time execution, image has to be unhidden, other times only above code has to be executed, below code becomes pointless
+            {
+            document.getElementById('image').style.display="block";
+            fst=1
+            }     //makes the image visible
+            // }// return resf;
         }
     </script>
     <div>   
