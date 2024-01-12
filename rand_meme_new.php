@@ -14,6 +14,7 @@
                 display: none;  /* for initially setting as hidden */
                 border-radius: 15px;    /* roundedd corners */
             }
+
         .center
             {
                 margin: auto;
@@ -22,41 +23,15 @@
                 top: 25%;   /* how much distance from top */ 
                 left: 40%;  /* distance from left*/
                 padding: 10px;
-                
             }
-
-        .div2
-            {
-                align-items: center;
-            }
-
-        .div3
-        {
-            border: 5px solid #FF0000;
-        }
 
         .image
             {
                 display: block;     /* sets image display */
                 margin-left: auto;  /* aligns left */
                 margin-top: auto;   /* aligns from top */
-                /* border: 50px solid #FF0000; */
                 border:#008CBA;     /* TO BE DISCUSSED */
             }
-
-        .div1 
-            {
-                width: 100px;
-                height: 100px;
-                /* background-color: red; */
-                position: absolute; 
-                top:0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-
 
         .button 
             {
@@ -101,18 +76,6 @@
                 background-color: transparent;
                 text-decoration: underline;
             }
-
-                /* .button2 {
-                background-color: white; 
-                color: black; 
-                border: 2px solid #008CBA;
-                }
-
-                .button2:hover {
-                background-color: #008CBA;
-                color: white;
-                } */
-
         .button2 
             {
                 background-color: white; 
@@ -131,13 +94,10 @@
             {
                 /* The image used */
                 background-image: url("..\\Images\\other\\pepe_bg1.jpg  ");
-
                 /* Full height */
                 height: 100%;
-
                 /* Center and scale the image nicely */
                 background-position: center;
-                
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -151,61 +111,18 @@
 </head>
  
 <body>
-    <!-- <div>
-        <h1>GeeksforGeeks</h1>
-        <h3>Click on the button to see image</h3> -->
-        <!-- Add id to image -->
-
-    <!-- </div> -->
-
     <div class="bg">
         <a href="../webpage_home.html">     <!-- Link to home webpage -->
                     <button class="button2">&larr;Main Menu</button>    <!-- Button for going back to main menu -->
         </a>
         <center>
-
-            <button class="button1" onclick="rpath()" id="btnID">Generate meme</button> <!-- Button for generating random memes -->
-            <br/>
-
-            <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto; border: 5px solid rgba(255,255,255,0.5); "/> <!-- Image which will get changedto random image 
-                                                                                                        every time button is pressed -->
-    
+            <button class="button1" onclick="rpath()" id="btnID">Generate meme</button> <br/> <!-- Button for generating random memes -->
+            <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto; border: 5px solid rgba(255,255,255,0.5); "/> 
+            <!-- Image which will get changed to random image every time button is pressed -->
         </center>
-
-
-<!-- 
-    <p id="demo">hi</p> -->
- <!-- <p>
-    hello world
- </p>
-
- <h2>
-    yoo how u doing
- </h2> -->
- <!-- <button type="button" onclick="show2()" id="btnID2">
-        new image sfd
-    </button> -->
     
-    
-    <!--
-        Javascript Code
-    -->
+    <!-- Javascript Code -->
     <script>
-        //unused
-        // function show() {
-        //     /* Access image by id and change 
-        //     the display property to block*/
-        //     document.getElementById('image')
-        //         .style.display = "block";
-        //     document.getElementById('btnID')
-        //         .style.display = "none";
-        // }
-        // function show2()
-        // {
-        //     document.getElementById('image');
-        // }
-        // END of unused part
-
         let fst=0;      //kinda like flag, tells if program is executing first time or subsequent times
         function rpath()
         {
@@ -215,16 +132,12 @@
             let str3 = ".jpg";                                  //last part of image path
             let res = str1.concat(x);                 //concat adds the second string to end of first string
             let resf = res.concat(str3);                        //generates path to a random image
-            // document.getElementById('demo').innerHTML+='<img id="image" src="'+ resf + '" alt="GFG image" />';
             document.getElementById('image').src=resf;          //sets the path of image as the randomly generated string above
-            // if (document.getElementById('image').style.display==="none")
-            // {
             if(fst===0)     //if first time execution, image has to be unhidden, other times only above code has to be executed, below code becomes pointless
             {
             document.getElementById('image').style.display="block";
             fst=1
             }     //makes the image visible
-            // }// return resf;
         }
     </script>
     <div>   
