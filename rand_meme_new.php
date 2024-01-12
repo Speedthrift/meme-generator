@@ -33,20 +33,6 @@
                 border:#008CBA;     /* TO BE DISCUSSED */
             }
 
-        .button 
-            {
-                border: none;
-                color: white;
-                padding: 16px 32px;     /* distance of text from button edges */
-                text-align: center;
-                text-decoration: none;  /* to remove hyperlink mods */
-                display: inline-block;  
-                font-size: 16px;
-                /* margin: 4px 2px; */
-                transition-duration: 0.4s;  /* for hover transition duration */
-                cursor: pointer;    
-            }
-
         .button1 /* default for button */
             {
                 background-color: white; 
