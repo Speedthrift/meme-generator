@@ -88,90 +88,52 @@
     <a href=../webpage_home.html>
         <button class="button2">&larr; Main Menu</button>
         </a>
-            <div class="cls1">
-
-    
-        <?php
+    <div class="cls1">
+        <div class="div2">
+        <a href="temp_fin_new.php">    
+            <button class="button">More Templates!</button>
+        </a><br/>
+        <img id="image" src="<?php echo tempfin(); ?>" alt="" style=" width: 50%;  height: auto; border: 5px solid rgba(255,255,255,0.5);"/><br/>
+    </div> <!-- End of div div2 -->
+</div>  <!-- End of div cls1 -->
+</div>  <!-- End of div bg -->
+        
+    <?php
         function tempfin()
         {
-        // servername => localhost
-        // username => root
-        // password => empty
-        // database name => staff
-        $conn = mysqli_connect("localhost", "root", "", "test1");
-         
+        $conn = mysqli_connect("localhost", "root", "", "test1");   //connecting to database
         // Check connection
-        if($conn === false){
+        if($conn === false){        //if connection unsuccessfull
             die("ERROR: Could not connect. "
                 . mysqli_connect_error());
         }
-         
-        // Taking all 5 values from the form data(input)
+        // Taking value from the form data(input)
         $que =  $_REQUEST['squery'];
-        // $last_name = $_REQUEST['last_name'];
-        // $gender =  $_REQUEST['gender'];
-        // $address = $_REQUEST['address'];
-        // $email = $_REQUEST['email'];
-         
-        // Performing insert query execution
-        // here our table name is college
+        // Performing select query execution
+        // here the table name is temp1
         $sql = "SELECT address FROM temp1 WHERE keywords like '%{$que}%';";
-         
-        if(mysqli_query($conn, $sql)){
-            // echo "Finding template..."; 
- 
-            // echo nl2br("\n$first_name\n $last_name\n "
-            //     . "$gender\n $address\n $email");
-        } else{
-            echo "ERROR: Hush! ";
-                
-        }
-        $result = ($conn->query($sql)); 
-
-        if (empty($result))
-        {
-            echo "Emptyyyyyyyy";
-            exit();
-        }
+        $result = ($conn->query($sql));     //performs the query and stores the result
+        if (empty($result))     //if not found
+            {
+                echo "Emptyyyyyyyy";
+                exit();
+            }
         //declare array to store the data of database 
         $row = [];  
-    
         if ($result->num_rows > 0)  
-        { 
-            // fetch all data from db into array  
-            $row = $result->fetch_all(MYSQLI_ASSOC);   
-        }        
-        // echo $row;
-    
-
-            if(!empty($row)) 
-            foreach($row as $rows) 
+            { 
+                // fetch all data from db into array  
+                $row = $result->fetch_all(MYSQLI_ASSOC);   
+            }        
+        if(!empty($row)) 
+        foreach($row as $rows) 
             {
-            
-            $queret=$rows['address']; 
+                $queret=$rows['address']; 
             }
-                
-        // else
-        // {
-        //     echo "Sorry, templates matching keyword {$que} not found :(";
-        //     exit();
-        // }
-            return $queret;
+
+        return $queret;
         }
     ?> 
- <!--        // Close connection
-        mysqli_close($conn);
-    -->
-
-        <div class="div2">
-    <a href="temp_fin_new.php">    
-    <button class="button">More Templates!</button>
-    </a>
-    <br/>
-    <img id="image" src="<?php echo tempfin(); ?>" alt="" style=" width: 50%;  height: auto; border: 5px solid rgba(255,255,255,0.5);"/>
-    <br/>
-    </div>
-
 </body>
  
 </html>
