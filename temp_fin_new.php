@@ -5,12 +5,13 @@
             Finding templates
         </title>
         <style>
-            body, html
+        body, html
             {
                 height: 100%;
                 margin: 0;
             }
-            .bg
+            
+        .bg
             {
                 background-image: url("..\\Images\\other\\pepe_bg3.jpg");
                 height: 100%;
@@ -18,7 +19,8 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
-            .cls1
+        
+        .cls1
             {
                 text-align: center;
                 margin: auto;
@@ -28,7 +30,7 @@
                 padding: 10px;
             }
 
-            .button2 
+        .button2 
             {
                 background-color: white; 
                 color: black; 
@@ -36,28 +38,13 @@
                 border-radius: 10px;
             }
 
-            .button2:hover 
+        .button2:hover 
             {
                 background-color: #008CBA;
                 color: white;
             }
-            .button
-            {
-                border: none;
-                color: white;
-                padding: 16px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                transition-duration: 0.4s;
-                cursor: pointer;
-                top:0%;
-                left: 0%;
-            }
-
-            .p3 
+            
+        .p3 
             {
                 font-family: "Lucida Console" , "Courier New", monospace;
             }
@@ -68,29 +55,19 @@
     <body>
         <div class="bg">
         <a href=../webpage_home.html>
-        <button class="button2">&larr; Main Menu</button>
+            <button class="button2">&larr; Main Menu</button>   <!-- For going back to homepage -->
         </a>
             <div class="cls1">
-                <div class="button">                   
-                </div>
                 <div class="p3">
                     <h2>Finding meme templates</h2>
-
-                    <!--<form action="/action_page.php"> -->
-                    <form action="temp_find_suc.php" method=POST>
-                    <label for="squery">Enter Keywords:</label><br>
+                    <form action="temp_find_suc.php" method=POST>   <!-- when button is pressed -->
+                    <label for="squery">Enter Keywords:</label><br> <!-- For taking search params -->
                     <input type="text" id="squery" name="squery" value="" placeholder="(eg. this is fine)" size=25><br>
-                    <!-- <p>Choose your search parameter:</p>
-                    <input type="radio" id="strctsrch" name="srchopt" value="Strict">
-                    <label for="html">Strict (searches for specific memes only)</label><br>
-                    <input type="radio" id="lensrch" name="srchopt" value="Lenient">
-                    <label for="css">Broad (gives a wider range of memes)</label><br><br> -->
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit">            <!-- For forwarding to next page -->
                     </form> 
                     <p> Click button to see templates matching your search query parameters</p>
-            <!-- p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p-->
-                </div>
-            </div>
-        </div>
+                </div>  <!-- End of div p3-->
+            </div>  <!-- End of div cls1-->
+        </div>  <!-- End of div bg-->
     </body>
 </html>
