@@ -12,7 +12,7 @@
             }
             .bg
             {
-                background-image: url("pepe_bg3.jpg");
+                background-image: url("..\\Images\\other\\pepe_bg3.jpg");
                 height: 100%;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -23,7 +23,7 @@
                 text-align: center;
                 margin: auto;
                 position: absolute;
-                top: 14%;
+                top: 0%;
                 left: 30%;
                 padding: 10px;
             }
@@ -67,24 +67,24 @@
     </head>
     <body>
         <div class="bg">
+        <a href=../webpage_home.html>
+        <button class="button2">&larr; Main Menu</button>
+        </a>
             <div class="cls1">
-                <div class="button">
-                    <a href=webpage_home.html>
-                        <button class="button2">Main Menu</button>
-                    </a>
+                <div class="button">                   
                 </div>
                 <div class="p3">
                     <h2>Finding meme templates</h2>
 
                     <!--<form action="/action_page.php"> -->
-                    <form>
+                    <form action="temp_find_suc.php" method=POST>
                     <label for="squery">Enter Keywords:</label><br>
-                    <input type="text" id="squery" name="squery" value=""><br>
-                    <p>Choose your search parameter:</p>
+                    <input type="text" id="squery" name="squery" value="" placeholder="(eg. this is fine)" size=25><br>
+                    <!-- <p>Choose your search parameter:</p>
                     <input type="radio" id="strctsrch" name="srchopt" value="Strict">
                     <label for="html">Strict (searches for specific memes only)</label><br>
                     <input type="radio" id="lensrch" name="srchopt" value="Lenient">
-                    <label for="css">Broad (gives a wider range of memes)</label><br><br>
+                    <label for="css">Broad (gives a wider range of memes)</label><br><br> -->
                     <input type="submit" value="Submit">
                     </form> 
                     <p> Click button to see templates matching your search query parameters</p>

@@ -65,7 +65,7 @@
                 cursor: pointer;    
             }
 
-        input[type=submit] /* default for button */
+        .button1 /* default for button */
             {
                 background-color: white; 
                 color: black; 
@@ -73,11 +73,9 @@
                 font-size: 25px;
                 border-radius: 15px;    /* smoothing of corners of button */
                 padding: 15px 15px;
-                text-decoration: none;
-                cursor: pointer;
             }
 
-        input[type=submit]:hover  /* when user hovers over button */
+        .button1:hover  /* when user hovers over button */
             {
                 background-color: #04AA6D;
                 color: white;
@@ -155,24 +153,16 @@
         <a href="../webpage_home.html">     <!-- Link to home webpage -->
                     <button class="button2">&larr;Main Menu</button>    <!-- Button for going back to main menu -->
         </a>
-            <center>
-        <!--<form action="/action_page.php"> -->
-        <form action="rand_stk_new1.php" method=POST>
-                    
-                    <input type="submit" value="Random stickers">
-                    </form> 
+        <center>
+
+            <button class="button1" onclick="window.location.reload()" id="btnID">Random stickers!</button> <!-- Button for generating random sticker -->
+            <br/><br/>
+            <img id="image" src="<?php echo path(); ?>" alt="image goes brrrrrrrr" style=" width: 20%;  height: auto; border: 5px solid rgba(255,255,255,0.5);"/> <!-- Image which will get changedto random image 
+                                                                                                        every time button is pressed -->
+
         </center>
-                    <!-- <p> Click button to see templates matching your search query parameters</p> -->
-        <!-- <center>
 
-            <button class="button1" onclick="window.location.reload()" id="btnID">Random stickers!</button>-- Button for generating random sticker -->
-            <!-- <br/><br/>
-            <img id="image" src="<php echo path(); ?>" alt="image goes brrrrrrrr" style=" width: 20%;  height: auto; border: 5px solid rgba(255,255,255,0.5);"/> <!-- Image which will get changedto random image  -->
-                                                                                                        <!--every time button is pressed 
-
-        </center> -->
-<!--
-        <php 
+        <?php 
 
         function path()
         {
@@ -182,7 +172,7 @@
             $dbname = "test1"; 
                 
             $a=1;
-            $b=10;
+            $b=25;
             // connect the database with the server 
             $conn = new mysqli($servername,$username,$password,$dbname); 
             if ($conn -> connect_errno) 
@@ -191,7 +181,7 @@
             exit(); 
             } 
             $var2=mt_rand($a,$b);
-            $sql = "select * from meme1 where id={$var2}"; 
+            $sql = "select * from stk1 where id={$var2}"; 
             $result = ($conn->query($sql)); 
             //declare array to store the data of database 
             $row = [];  
@@ -213,7 +203,7 @@
 
                 return $queret;
             }
-        ?> -->
+        ?> 
 
 <!-- 
     <p id="demo">hi</p> -->
@@ -252,7 +242,7 @@
         {
             let ul=10;                           //upper bound (number of memes)
             let x = Math.floor((Math.random() * ul) + 1);   //picks a random number between 1 and upper limit
-            let str1 = "http://localhost/test1/Images/sticker_new/";  //first part of image path
+            let str1 = "http://localhost/test1/Images/stickers/";  //first part of image path
             let str3 = ".jpg";                                  //last part of image path
             let res = str1.concat(x);   
             let resf = res.concat(str3);                        //generates path to a random image

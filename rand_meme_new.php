@@ -18,9 +18,9 @@
             {
                 margin: auto;
                 width: 25%;    /* how much page width is occupied */
-                position: absolute;
-                top: 25%;
-                left: 40%;
+                position: absolute;     /* it is not relative to some other elements, rather to the page size */
+                top: 25%;   /* how much distance from top */ 
+                left: 40%;  /* distance from left*/
                 padding: 10px;
                 
             }
@@ -30,11 +30,18 @@
                 align-items: center;
             }
 
+        .div3
+        {
+            border: 5px solid #FF0000;
+        }
+
         .image
             {
                 display: block;     /* sets image display */
                 margin-left: auto;  /* aligns left */
                 margin-top: auto;   /* aligns from top */
+                /* border: 50px solid #FF0000; */
+                border:#008CBA;     /* TO BE DISCUSSED */
             }
 
         .div1 
@@ -123,13 +130,14 @@
         .bg 
             {
                 /* The image used */
-                background-image: url("..\\Images\\other\\bg1.jpg");
+                background-image: url("..\\Images\\other\\pepe_bg1.jpg  ");
 
                 /* Full height */
                 height: 100%;
 
                 /* Center and scale the image nicely */
                 background-position: center;
+                
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -157,10 +165,11 @@
         <center>
 
             <button class="button1" onclick="rpath()" id="btnID">Generate meme</button> <!-- Button for generating random memes -->
-            
-            <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto;"/> <!-- Image which will get changedto random image 
-                                                                                                        every time button is pressed -->
+            <br/>
 
+            <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto; border: 5px solid rgba(255,255,255,0.5); "/> <!-- Image which will get changedto random image 
+                                                                                                        every time button is pressed -->
+    
         </center>
 
 
@@ -195,25 +204,27 @@
         // {
         //     document.getElementById('image');
         // }
+        // END of unused part
 
-        let fst=0;  //kinda like flag, tells if program is executing first time or subsequent times
+        let fst=0;      //kinda like flag, tells if program is executing first time or subsequent times
         function rpath()
         {
-            let ul=10                           //upper bound (number of memes)
+            let ul=18;                           //upper bound (number of memes)
             let x = Math.floor((Math.random() * ul) + 1);   //picks a random number between 1 and upper limit
             let str1 = "http://localhost/test1/Images/memes/";  //first part of image path
             let str3 = ".jpg";                                  //last part of image path
-            let res = str1.concat(x);   
+            let res = str1.concat(x);                 //concat adds the second string to end of first string
             let resf = res.concat(str3);                        //generates path to a random image
             // document.getElementById('demo').innerHTML+='<img id="image" src="'+ resf + '" alt="GFG image" />';
             document.getElementById('image').src=resf;          //sets the path of image as the randomly generated string above
-            document.getElementById('image').style.display="block";     //makes the image visible
-            // return resf;if(fst===0)     
-            if (fst===0)//if first time execution, image has to be unhidden, other times only above code has to be executed, 
-            {           //below code becomes pointless and only takes up time
+            // if (document.getElementById('image').style.display==="none")
+            // {
+            if(fst===0)     //if first time execution, image has to be unhidden, other times only above code has to be executed, below code becomes pointless
+            {
             document.getElementById('image').style.display="block";
             fst=1
-            } 
+            }     //makes the image visible
+            // }// return resf;
         }
     </script>
     <div>   

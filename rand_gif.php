@@ -11,16 +11,16 @@
         /* Set display to none for image*/
         #image 
             {        /* for image */
-                /*display: none;  /* for initially setting as hidden */
+                display: none;  /* for initially setting as hidden */
                 border-radius: 15px;    /* roundedd corners */
             }
         .center
             {
                 margin: auto;
                 width: 25%;    /* how much page width is occupied */
-                position: absolute;
-                top: 25%;
-                left: 40%;
+                position: absolute;     /* it is not relative to some other elements, rather to the page size */
+                top: 25%;   /* how much distance from top */ 
+                left: 40%;  /* distance from left*/
                 padding: 10px;
                 
             }
@@ -30,11 +30,18 @@
                 align-items: center;
             }
 
+        .div3
+        {
+            border: 5px solid #FF0000;
+        }
+
         .image
             {
                 display: block;     /* sets image display */
                 margin-left: auto;  /* aligns left */
                 margin-top: auto;   /* aligns from top */
+                /* border: 50px solid #FF0000; */
+                border:#008CBA;     /* TO BE DISCUSSED */
             }
 
         .div1 
@@ -65,7 +72,7 @@
                 cursor: pointer;    
             }
 
-        input[type=submit] /* default for button */
+        .button1 /* default for button */
             {
                 background-color: white; 
                 color: black; 
@@ -73,11 +80,9 @@
                 font-size: 25px;
                 border-radius: 15px;    /* smoothing of corners of button */
                 padding: 15px 15px;
-                text-decoration: none;
-                cursor: pointer;
             }
 
-        input[type=submit]:hover  /* when user hovers over button */
+        .button1:hover  /* when user hovers over button */
             {
                 background-color: #04AA6D;
                 color: white;
@@ -125,13 +130,14 @@
         .bg 
             {
                 /* The image used */
-                background-image: url("..\\Images\\other\\pepe_bg1.jpg");
+                background-image: url("..\\Images\\other\\pepe_bg1.jpg  ");
 
                 /* Full height */
                 height: 100%;
 
                 /* Center and scale the image nicely */
                 background-position: center;
+                
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -155,106 +161,24 @@
         <a href="../webpage_home.html">     <!-- Link to home webpage -->
                     <button class="button2">&larr;Main Menu</button>    <!-- Button for going back to main menu -->
         </a>
-            <center>
-        <!--<form action="/action_page.php"> -->
-        <form action="rand_stk_new1.php" method=POST>
-                    
-                    <input type="submit" value="Random stickers">
-                    </form> 
+        <center>
+
+            <button class="button1" onclick="rpath()" id="btnID">Random GIF meme</button> <!-- Button for generating random memes -->
+            <br/>
+
+            <img id="image" src="" alt="image goes brrrrrrrr" style=" width: 30%;  height: auto; border: 5px solid rgba(255,255,255,0.5); "/> <!-- GIF which will get changed to random GIF 
+                                                                                                        every time button is pressed -->
         </center>
-                    <!-- <p> Click button to see templates matching your search query parameters</p> -->
-        <!-- <center>
 
-            <button class="button1" onclick="window.location.reload()" id="btnID">Random stickers!</button>-- Button for generating random sticker -->
-            <!-- <br/><br/>
-            <img id="image" src="<php echo path(); ?>" alt="image goes brrrrrrrr" style=" width: 20%;  height: auto; border: 5px solid rgba(255,255,255,0.5);"/> <!-- Image which will get changedto random image  -->
-                                                                                                        <!--every time button is pressed 
-
-        </center> -->
-<!--
-        <php 
-
-        function path()
-        {
-            $servername = "localhost"; 
-            $username = "root"; 
-            $password = ""; 
-            $dbname = "test1"; 
-                
-            $a=1;
-            $b=10;
-            // connect the database with the server 
-            $conn = new mysqli($servername,$username,$password,$dbname); 
-            if ($conn -> connect_errno) 
-            { 
-            echo "Failed to connect to MySQL: " . $conn -> connect_error; 
-            exit(); 
-            } 
-            $var2=mt_rand($a,$b);
-            $sql = "select * from meme1 where id={$var2}"; 
-            $result = ($conn->query($sql)); 
-            //declare array to store the data of database 
-            $row = [];  
-        
-            if ($result->num_rows > 0)  
-            { 
-                // fetch all data from db into array  
-                $row = $result->fetch_all(MYSQLI_ASSOC);   
-            }    
-            // echo $row;
-        
-    
-                if(!empty($row)) 
-                foreach($row as $rows) 
-                {
-                
-                $queret=$rows['address']; 
-                }
-
-                return $queret;
-            }
-        ?> -->
-
-<!-- 
-    <p id="demo">hi</p> -->
- <!-- <p>
-    hello world
- </p>
-
- <h2>
-    yoo how u doing
- </h2> -->
- <!-- <button type="button" onclick="show2()" id="btnID2">
-        new image sfd
-    </button> -->
-    
-    
-    <!--
-        Javascript Code
-    -->
-    <script>
-        //unused
-        // function show() {
-        //     /* Access image by id and change 
-        //     the display property to block*/
-        //     document.getElementById('image')
-        //         .style.display = "block";
-        //     document.getElementById('btnID')
-        //         .style.display = "none";
-        // }
-        // function show2()
-        // {
-        //     document.getElementById('image');
-        // }
-
+<script>
         let fst=0;      //kinda like flag, tells if program is executing first time or subsequent times
         function rpath()
         {
             let ul=10;                           //upper bound (number of memes)
             let x = Math.floor((Math.random() * ul) + 1);   //picks a random number between 1 and upper limit
-            let str1 = "http://localhost/test1/Images/sticker_new/";  //first part of image path
-            let str3 = ".jpg";                                  //last part of image path
-            let res = str1.concat(x);   
+            let str1 = "http://localhost/test1/Images/gifs/mgifs/";  //first part of image path
+            let str3 = ".gif";                                  //last part of image path
+            let res = str1.concat(x);                 //concat adds the second string to end of first string
             let resf = res.concat(str3);                        //generates path to a random image
             // document.getElementById('demo').innerHTML+='<img id="image" src="'+ resf + '" alt="GFG image" />';
             document.getElementById('image').src=resf;          //sets the path of image as the randomly generated string above
