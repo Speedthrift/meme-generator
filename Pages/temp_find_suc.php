@@ -2,7 +2,7 @@
 <html>
  
 <head>
-    <title>GIF!</title>
+    <title>Template!</title>
 </head>
 <style>
             body, html
@@ -37,6 +37,7 @@
                 left: 20%;
                 padding: 10px;
             }
+
             .button2 
             {
                 background-color: white; 
@@ -75,6 +76,10 @@
             {
                 align-items: center;
             }
+            .p3 
+            {
+                font-family: "Lucida Console" , "Courier New", monospace;
+            }
 
         </style>
 
@@ -82,43 +87,39 @@
 <div class="bg">        
     <a href=../webpage_home.html>
         <button class="button2">&larr; Main Menu</button>
-    </a>
+        </a>
     <div class="cls1">
         <div class="div2">
-            <a href="gif_fin.php">    
-                <button class="button">More GIFs!</button>
-            </a><br/>
-            <video style=" width: 50%;  height: 50%; border: 5px solid rgba(255,255,255,0.5);" controls>
-            <source src="<?php echo giffin(); ?>" type="video/mp4">
-            Oops, can't display GIF :(
-            </video><br/>
-        </div>
-    </div>
-</div>
-
+        <a href="temp_fin_new.php">    
+            <button class="button">More Templates!</button>
+        </a><br/>
+        <img id="image" src="<?php echo tempfin(); ?>" alt="" style=" width: 50%;  height: auto; border: 5px solid rgba(255,255,255,0.5);"/><br/>
+    </div> <!-- End of div div2 -->
+</div>  <!-- End of div cls1 -->
+</div>  <!-- End of div bg -->
+        
     <?php
-        function giffin()
+        function tempfin()
         {
-        $conn = mysqli_connect("localhost", "root", "", "test1");
+        $conn = mysqli_connect("localhost", "root", "", "test1");   //connecting to database
         // Check connection
-        if($conn === false){
+        if($conn === false){        //if connection unsuccessfull
             die("ERROR: Could not connect. "
                 . mysqli_connect_error());
         }
-         
-        // Taking values from the form data(input)
-        $que1 =  $_REQUEST['sgquery'];
-
-        // Performing query execution
-        // here our table name is gif1
-        $sql1 = "SELECT address FROM gif1 WHERE keywords like '%{$que1}%';";
-        $result = ($conn->query($sql1)); 
-        if (empty($result))
+        // Taking value from the form data(input)
+        $que =  $_REQUEST['squery'];
+        // Performing select query execution
+        // here the table name is temp1
+        $sql = "SELECT address FROM temp1 WHERE keywords like '%{$que}%';";
+        $result = ($conn->query($sql));     //performs the query and stores the result
+        if (empty($result))     //if not found
             {
                 echo "Emptyyyyyyyy";
                 exit();
             }
-        $row = []; 
+        //declare array to store the data of database 
+        $row = [];  
         if ($result->num_rows > 0)  
             { 
                 // fetch all data from db into array  
@@ -129,6 +130,7 @@
             {
                 $queret=$rows['address']; 
             }
+
         return $queret;
         }
     ?> 
