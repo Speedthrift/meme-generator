@@ -1,0 +1,128 @@
+/* <link rel="stylesheet" href="style_css.css"> */
+
+.center {
+    margin: auto;
+    width: 25%;    /* how much page width is occupied */
+    position: absolute;     /* it is not relative to some other elements, rather to the page size */
+    top: 25%;   /* how much distance from top */ 
+    left: 40%;  /* distance from left*/
+    padding: 10px;}
+
+.image {
+    display: block;     /* sets image display */
+    margin-left: auto;  /* aligns left */
+    margin-top: auto;   /* aligns from top */
+    border: 5px solid rgba(255,255,255,0.5); /* TO BE DISCUSSED *//* roundedd corners */}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;}
+
+body,html{
+    height: 100%;    /* for image */
+    margin: 0;}
+/* ----------------------- */
+
+input[type=submit] /* default for button */
+{/* for random sticker new page*/
+    border: 1px solid #051a59;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    top:0%;
+    left: 0%;
+    border-radius: 10px;
+    font-family: "Lucida Console" , "Courier New", monospace;
+}
+input[type=submit]:hover  /* when user hovers over button */
+{/* for random sticker new page*/
+    background-color: #051a59;
+    color: white;
+}
+/* ----------- ------------ */
+
+.button     /* second button of random meme page */
+{/* shared */
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    border-radius: 10px;
+}
+
+.button:hover {    
+    background-color: #008CBA;
+    color: white;
+}
+
+.button1 /* main button of random meme page */
+{/* shared */
+    background-color: white; 
+    color: black; 
+    border: 2px solid #04AA6D;
+    font-size: 25px;
+    border-radius: 15px;    /* smoothing of corners of button */
+    padding: 15px 15px;
+}
+
+.button1:hover  {/* when user hovers over button */
+    background-color: #04AA6D;
+    color: white;
+}
+.button8:hover 
+{/* shared with tem fin suc page */
+    background-color: #051a59;
+    color: white;
+}
+.button8
+{/* shared with tem fin suc page */
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    top:0%;
+    left: 0%;
+    border-radius: 10px;
+    font-family: "Lucida Console" , "Courier New", monospace;
+}
+.cls1
+{/* shared with tem fin new & gif fin page */
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0%;
+    left: 30%;
+    padding: 10px;
+}
+.p3 {/* shared with tem fin new & gif fin page *//* shared with tem fin suc page */
+    font-family: "Lucida Console" , "Courier New", monospace;}
+.cls2
+{/* shared with gif fin suc & tem fin suc page */
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: auto;
+    left: 20%;
+    padding: 10px;
+}
+.div2
+{/* shared with gif fin suc & tem fin suc page */
+    align-items: center;
+}
