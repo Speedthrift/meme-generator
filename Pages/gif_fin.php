@@ -19,7 +19,7 @@
     <body>
         <div class="bg">
         <a href=../webpage_home.html>
-            <button class="button1">&larr; Main Menu</button>
+            <button class="button">&larr; Main Menu</button>
         </a>
             <div class="cls1">
                 <div class="p3">
@@ -27,7 +27,7 @@
                     <form action="gif_fin_suc.php" method=POST>
                         <label for="sgquery">Enter Keywords:</label><br>
                         <input type="text" id="sgquery" name="sgquery" value="" placeholder="(eg. hello wave)" size=30><br>
-                        <input type="submit" value="Submit">
+                        <input class="button8" type="submit" value="Submit">
                     </form> 
                     <p> Click button to see gifs matching your search query parameters</p>
                 </div>

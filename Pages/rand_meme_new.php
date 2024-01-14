@@ -30,7 +30,7 @@
 <body>
     <div class="bg">
         <a href="../webpage_home.html">     <!-- Link to home webpage -->
-                    <button class="button2">&larr;Main Menu</button>    <!-- Button for going back to main menu -->
+                    <button class="button">&larr;Main Menu</button>    <!-- Button for going back to main menu -->
         </a>
         <center>
             <button class="button1" onclick="rpath()" id="btnID">Generate meme</button> <br/> <!-- Button for generating random memes -->
