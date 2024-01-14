@@ -7,6 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memes</title>
     <link rel="stylesheet" href="style_css.css">
+    <style>
+    .bg
+        {
+            background-image: url("..\\Images\\other\\pepe_bg1.jpg  ");
+                /* Full height */
+                height: 100%;
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+        }
+        /* Set display to none for image*/
+        #image 
+        {        /* for image */
+            display: none;  /* for initially setting as hidden */
+            border-radius: 15px;
+        }
+    </style>
 </head>
  
 <body>

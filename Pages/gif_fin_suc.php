@@ -3,23 +3,9 @@
  
 <head>
     <title>GIF!</title>
+    <link rel="stylesheet" href="style_css.css">
 </head>
 <style>
-            body, html
-            {
-                height: 100%;
-                margin: 0;
-            }
-            .center
-            {
-                margin: auto;
-                width: 25%;    /* how much page width is occupied */
-                position: absolute;     /* it is not relative to some other elements, rather to the page size */
-                top: 25%;   /* how much distance from top */ 
-                left: 40%;  /* distance from left*/
-                padding: 10px;
-                
-            }
             .bg
             {
                 background-image: url("..\\Images\\other\\pepe_bg3.jpg");
@@ -28,65 +14,16 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
-            .cls1
-            {
-                text-align: center;
-                margin: auto;
-                position: absolute;
-                top: auto;
-                left: 20%;
-                padding: 10px;
-            }
-            .button2 
-            {
-                background-color: white; 
-                color: black; 
-                border: 2px solid #008CBA;
-                border-radius: 10px;
-            }
-            .button2:hover 
-            {
-                background-color: #051a59;
-                color: white;
-            }
-            .button:hover 
-            {
-                background-color: #051a59;
-                color: white;
-            }
-            .button
-            {
-                border: none;
-                color: black;
-                padding: 16px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 18px;
-                margin: 4px 2px;
-                transition-duration: 0.4s;
-                cursor: pointer;
-                top:0%;
-                left: 0%;
-                border-radius: 10px;
-                font-family: "Lucida Console" , "Courier New", monospace;
-            }
-            .div2
-            {
-                align-items: center;
-            }
-
         </style>
-
 <body>
 <div class="bg">        
     <a href=../webpage_home.html>
-        <button class="button2">&larr; Main Menu</button>
+        <button class="button">&larr; Main Menu</button>
     </a>
-    <div class="cls1">
+    <div class="cls2">
         <div class="div2">
             <a href="gif_fin.php">    
-                <button class="button">More GIFs!</button>
+                <button class="button8">More GIFs!</button>
             </a><br/>
             <video style=" width: 50%;  height: 50%; border: 5px solid rgba(255,255,255,0.5);" controls>
             <source src="<?php echo giffin(); ?>" type="video/mp4">
